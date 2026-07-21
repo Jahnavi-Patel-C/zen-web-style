@@ -20,6 +20,9 @@
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
+  --font-boska: "Boska", ui-serif, Georgia, serif;
+  --font-synonym: "Synonym", ui-sans-serif, system-ui, sans-serif;
+  --font-melodrama: "Melodrama", ui-serif, Georgia, serif;
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
