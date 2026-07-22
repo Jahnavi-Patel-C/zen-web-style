@@ -1,6 +1,7 @@
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { BrowserWireframe } from "./BrowserWireframe";
 import { TabbedBrowser } from "./TabbedBrowser";
+import { EditorialLayers } from "./EditorialLayers";
 
 // Subtle editorial background layers: wireframes, grid, oversized kanji, faint labels.
 // Opacities are constrained to 3–8% per the brief.
@@ -132,6 +133,9 @@ export function HeroBackground() {
           />
         ))}
       </div>
+
+      {/* Additional editorial fragments (rulers, specimens, grids, search) */}
+      <EditorialLayers />
     </div>
   );
 }
