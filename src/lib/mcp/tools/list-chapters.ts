@@ -1,5 +1,4 @@
 import { defineTool } from "@lovable.dev/mcp-js";
-import { z } from "zod";
 import { chapters } from "./_content";
 
 export default defineTool({
@@ -17,6 +16,3 @@ export default defineTool({
     };
   },
 });
-
-// silence unused import in some builds
-void z;
