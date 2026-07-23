@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "sdk_version": "0.24.0",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "japanese-web-design-mcp",
+      "version": "0.1.0",
+      "title": "Japanese Web Design — Research Publication"
+    },
+    "tools": [
+      {
+        "name": "list_chapters",
+        "title": "List chapters",
+        "description": "List every chapter of the 'Japanese Web Design — A Comparative Inquiry' research publication with its number, id, and title.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_chapter",
+        "title": "Get chapter",
+        "description": "Fetch the full text of a single chapter from the 'Japanese Web Design — A Comparative Inquiry' research publication by its id (e.g. 'introduction', 'methodology').",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Chapter id, such as 'introduction' or 'literature-review'. Use list_chapters to discover ids."
+            }
+          },
+          "required": [
+            "id"
+          ]
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
