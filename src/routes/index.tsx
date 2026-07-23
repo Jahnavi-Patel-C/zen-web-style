@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/hero/Hero";
 import { ChapterNav, chapters } from "@/components/ChapterNav";
+import { Introduction } from "@/components/chapters/Introduction";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -28,7 +29,8 @@ function Index() {
     <div className="bg-[#15171B] text-[#F5F1E8]">
       <ChapterNav />
       <Hero />
-      {chapters.map((c) => (
+      <Introduction />
+      {chapters.filter((c) => c.id !== "introduction").map((c) => (
         <section
           key={c.id}
           id={c.id}
