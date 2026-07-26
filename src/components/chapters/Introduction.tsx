@@ -7,6 +7,7 @@ import {
   ChapterRule,
   ChapterAnnotation,
 } from "./ChapterShell";
+import { EvidenceBoard } from "./EvidenceBoard";
 
 export function Introduction() {
   return (
@@ -47,6 +48,8 @@ export function Introduction() {
         published between 2018 and 2025. It does not consider native applications, print, or
         broadcast media, though these clearly inform the same visual lineage.
       </ChapterAnnotation>
+
+      <EvidenceBoard />
 
       <ChapterSubheading>A Question of Density</ChapterSubheading>
 
