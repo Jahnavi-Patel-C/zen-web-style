@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, type MotionValue } from "motion/react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 /**
  * Archival research cards that begin as one compact stack and are slowly
@@ -33,6 +34,7 @@ const observations: Observation[] = [
 
 export function EvidenceBoard() {
   const ref = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
@@ -41,6 +43,42 @@ export function EvidenceBoard() {
   const linesOpacity = useTransform(scrollYProgress, [0.75, 0.95], [0, 1]);
   const captionOpacity = useTransform(scrollYProgress, [0, 0.18], [1, 0]);
   const settledOpacity = useTransform(scrollYProgress, [0.8, 1], [0, 1]);
+
+  if (isMobile) {
+    return (
+      <div className="mt-16 space-y-6" aria-label="Collected research observations">
+        <div className="text-[10px] uppercase tracking-[0.35em] text-[rgba(245,241,232,0.4)]">
+          Collected material — 08 items
+        </div>
+        {observations.map((o, i) => (
+          <motion.article
+            key={o.n}
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-10% 0px" }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            style={{ rotate: i % 2 ? 0.6 : -0.6 }}
+            className="border border-[rgba(245,241,232,0.14)] bg-[#181A1F] px-4 py-4"
+          >
+            <div className="flex items-baseline justify-between">
+              <span className="font-boska text-[13px] tracking-[0.08em] text-[#A98E7A]">{o.n}</span>
+              <span className="text-[9px] uppercase tracking-[0.3em] text-[rgba(245,241,232,0.35)]">
+                {o.annotation}
+              </span>
+            </div>
+            <h4 className="mt-3 font-boska text-[19px] leading-tight text-[#F5F1E8]">{o.title}</h4>
+            <div className="mt-3 h-px w-full bg-[rgba(245,241,232,0.1)]" />
+            <div className="mt-3 opacity-45">
+              <Fragment kind={o.fragment} />
+            </div>
+            <p className="mt-3 font-synonym text-[12.5px] leading-[1.65] text-[rgba(245,241,232,0.62)]">
+              {o.note}
+            </p>
+          </motion.article>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div
