@@ -107,7 +107,7 @@ export function EvidenceBoard() {
           </motion.svg>
 
           {/* board header */}
-          <div className="pointer-events-none absolute inset-x-0 top-0 flex items-baseline justify-between">
+          <div className="pointer-events-none absolute inset-x-0 -top-8 flex items-baseline justify-between">
             <motion.div
               style={{ opacity: captionOpacity }}
               className="text-[10px] uppercase tracking-[0.35em] text-[rgba(245,241,232,0.4)]"
