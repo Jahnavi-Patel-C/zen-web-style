@@ -83,7 +83,7 @@ export function EvidenceBoard() {
   return (
     <div
       ref={ref}
-      className="relative mt-24 h-[320vh] md:-mx-16 lg:-ml-[13vw] lg:w-[62vw]"
+      className="relative mt-24 h-[320vh] md:-mx-16 lg:-ml-[15vw] lg:w-[76vw]"
       aria-label="Collected research observations"
     >
       <div className="sticky top-0 flex h-screen items-center">
@@ -163,7 +163,7 @@ function Card({
         x: "-50%",
         y: "-50%",
       }}
-      className="absolute w-[248px] border border-[rgba(245,241,232,0.14)] bg-[#181A1F] px-4 py-4 sm:w-[268px]"
+      className="absolute w-[212px] border border-[rgba(245,241,232,0.14)] bg-[#181A1F] px-4 py-4 xl:w-[232px]"
     >
       <div className="flex items-baseline justify-between">
         <span className="font-boska text-[13px] tracking-[0.08em] text-[#A98E7A]">{o.n}</span>
