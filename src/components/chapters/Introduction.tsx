@@ -18,26 +18,28 @@ export function Introduction() {
       pageRef="§ 01 · Pages 012 – 019"
     >
       <ChapterLead>
-        Japanese web design has long existed as a paradox — visually dense, information-heavy, and
-        seemingly at odds with the minimal aesthetics the West often attributes to Japanese culture.
+        Japanese websites are frequently described as visually dense and information-rich —
+        characteristics that appear to differ from the minimalist visual language frequently
+        associated with Japanese design in international discourse.
       </ChapterLead>
 
       <ChapterMarker label="Opening Note" />
 
       <ChapterParagraph>
-        This inquiry begins with a simple observation. The interfaces I encountered daily as an
-        Indian designer — restrained, spacious, quietly Western in their assumptions — bore almost
-        no resemblance to the pages I found on Japanese news portals, retail platforms, and civic
-        websites. Those pages felt loud, packed, almost cartographic in their density. And yet they
-        worked. Millions of readers navigated them with ease.
+        This inquiry begins with an observation rather than a conclusion. The interfaces I encounter
+        daily as an Indian design student are largely spacious and restrained, shaped by conventions
+        that circulate widely in contemporary Western practice. Repeated visits to Japanese news
+        sites, government portals, university pages, and commercial platforms suggested a different
+        set of priorities: closely packed navigation, layered typographic scales, and a high volume
+        of information presented at once.
       </ChapterParagraph>
 
       <ChapterParagraph>
-        The dissonance between what the design world praises as "good" and what a large,
-        technologically advanced country actually uses became the seed of this research. If usability
-        is universal, why do two literate, dense cultures arrive at such different visual languages?
-        And what might Indian designers — working in an equally multilingual, high-information
-        context — learn from a system that refuses the quiet page?
+        These pages continue to be used at scale, which raises questions rather than settles them.
+        Why do such visually dense interfaces appear to remain workable for their audiences? Are the
+        conventions that international design discourse treats as broadly applicable in fact shaped
+        by particular scripts, reading habits, and publishing histories? This research takes those
+        questions as its starting point.
       </ChapterParagraph>
 
       <ChapterAnnotation>
@@ -49,30 +51,32 @@ export function Introduction() {
       <ChapterSubheading>A Question of Density</ChapterSubheading>
 
       <ChapterParagraph>
-        Density is not clutter. This is the central claim the research sets out to test. Where a
-        Western reader may see visual chaos, a Japanese reader often reads a carefully ordered
-        hierarchy — one shaped by kanji, kana, typographic scale, and centuries of newspaper and
-        pamphlet convention. The research asks whether density, when handled through the right
-        typographic and structural tools, can be a form of respect for the reader's time.
+        The central question this study attempts to answer is whether visual density in Japanese web
+        interfaces functions as an organising system rather than as an absence of hierarchy. Existing
+        commentary often reads such pages as cluttered; other accounts suggest that kanji and kana,
+        typographic scale, and long-standing newspaper and pamphlet conventions may contribute to
+        structures that are legible to their intended readers. Which of these readings the evidence
+        supports is examined in the chapters that follow.
       </ChapterParagraph>
 
       <ChapterParagraph>
-        India presents a useful counterpoint. Our internet is multilingual, mobile-first, and often
-        built for readers who move between three scripts within a single sentence. Yet mainstream
-        Indian digital design largely inherits Silicon Valley's grammar — generous whitespace, single
-        columns, hero images. This research does not argue that Japanese conventions should replace
-        those norms. It asks what might be recovered if we treated the page, once again, as a
-        publication.
+        India offers a useful point of comparison. The Indian web is multilingual and largely
+        mobile-first, and many of its readers move between several scripts. At the same time, much
+        mainstream Indian digital design appears to adopt conventions common to global technology
+        products. Whether a comparative reading of these two contexts is instructive — and in what
+        respects — is treated here as an open question.
       </ChapterParagraph>
 
       <ChapterSubheading>Aims of the Study</ChapterSubheading>
 
       <ChapterParagraph>
-        Three aims guide the work. First, to document the recurring structural and typographic
-        patterns of contemporary Japanese web design through close reading of a curated sample.
-        Second, to place those findings against a parallel reading of Indian web design of the same
-        period. Third, to propose a small vocabulary — not a style guide — for designers working in
-        dense, multilingual contexts who feel underserved by the templates the industry offers them.
+        Three aims guide the work. First, to document recurring structural and typographic patterns
+        in contemporary Japanese web design through close reading of a curated sample. Second, to set
+        those observations alongside a parallel reading of Indian web design from the same period.
+        Third, to consider what vocabulary — descriptive rather than prescriptive — might be useful
+        for designers working in dense, multilingual contexts. The chapters that follow establish the
+        existing literature, describe the method of selection and analysis, present the comparative
+        readings, and only then discuss what may reasonably be inferred from them.
       </ChapterParagraph>
 
       <ChapterRule />
