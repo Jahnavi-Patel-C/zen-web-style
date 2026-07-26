@@ -22,14 +22,14 @@ interface Observation {
 }
 
 const observations: Observation[] = [
-  { n: "i", title: "Typography", note: "Multiple type sizes coexist within a single screen without visible conflict.", annotation: "Fig. a — type scale", fragment: "lines", x: 15, y: 22, rotate: -2.4 },
-  { n: "ii", title: "Navigation", note: "Menus are broad and shallow; many destinations are exposed at once.", annotation: "Fig. b — top menu", fragment: "nav", x: 38, y: 15, rotate: 1.6 },
-  { n: "iii", title: "Hierarchy", note: "Emphasis is carried by boxes and rules more often than by scale alone.", annotation: "Fig. c — rules", fragment: "column", x: 62, y: 20, rotate: -1.2 },
-  { n: "iv", title: "Density", note: "Information is packed tightly, yet remains navigable to habitual readers.", annotation: "Fig. d — grid", fragment: "grid", x: 85, y: 27, rotate: 2.2 },
-  { n: "v", title: "Whitespace", note: "Negative space is treated as a separator rather than as an aesthetic.", annotation: "Fig. e — measure", fragment: "sitemap", x: 16, y: 66, rotate: 1.9 },
-  { n: "vi", title: "Writing Systems", note: "Kanji, kana and Latin sit on the same line at different optical weights.", annotation: "Fig. f — specimen", fragment: "glyph", x: 39, y: 74, rotate: -1.7 },
-  { n: "vii", title: "Trust Signals", note: "Seals, dates and notices are placed early rather than in the footer.", annotation: "Fig. g — notice", fragment: "stamp", x: 63, y: 70, rotate: 2.6 },
-  { n: "viii", title: "Information Architecture", note: "Categories repeat across the page instead of collapsing into one path.", annotation: "Fig. h — index", fragment: "form", x: 86, y: 76, rotate: -2.1 },
+  { n: "i", title: "Typography", note: "Multiple type sizes coexist within a single screen without visible conflict.", annotation: "Fig. a — type scale", fragment: "lines", x: 13, y: 20, rotate: -2.4 },
+  { n: "ii", title: "Navigation", note: "Menus are broad and shallow; many destinations are exposed at once.", annotation: "Fig. b — top menu", fragment: "nav", x: 37.5, y: 14, rotate: 1.6 },
+  { n: "iii", title: "Hierarchy", note: "Emphasis is carried by boxes and rules more often than by scale alone.", annotation: "Fig. c — rules", fragment: "column", x: 62, y: 19, rotate: -1.2 },
+  { n: "iv", title: "Density", note: "Information is packed tightly, yet remains navigable to habitual readers.", annotation: "Fig. d — grid", fragment: "grid", x: 87, y: 25, rotate: 2.2 },
+  { n: "v", title: "Whitespace", note: "Negative space is treated as a separator rather than as an aesthetic.", annotation: "Fig. e — measure", fragment: "sitemap", x: 13, y: 68, rotate: 1.9 },
+  { n: "vi", title: "Writing Systems", note: "Kanji, kana and Latin sit on the same line at different optical weights.", annotation: "Fig. f — specimen", fragment: "glyph", x: 38, y: 76, rotate: -1.7 },
+  { n: "vii", title: "Trust Signals", note: "Seals, dates and notices are placed early rather than in the footer.", annotation: "Fig. g — notice", fragment: "stamp", x: 63, y: 72, rotate: 2.6 },
+  { n: "viii", title: "Information Architecture", note: "Categories repeat across the page instead of collapsing into one path.", annotation: "Fig. h — index", fragment: "form", x: 87, y: 78, rotate: -2.1 },
 ];
 
 export function EvidenceBoard() {
@@ -95,14 +95,14 @@ export function EvidenceBoard() {
             aria-hidden
           >
             <g stroke="rgba(245,241,232,0.14)" strokeWidth="1" strokeDasharray="2 5">
-              <line x1="15%" y1="22%" x2="38%" y2="15%" />
-              <line x1="38%" y1="15%" x2="62%" y2="20%" />
-              <line x1="62%" y1="20%" x2="85%" y2="27%" />
-              <line x1="16%" y1="66%" x2="39%" y2="74%" />
-              <line x1="39%" y1="74%" x2="63%" y2="70%" />
-              <line x1="63%" y1="70%" x2="86%" y2="76%" />
-              <line x1="15%" y1="22%" x2="16%" y2="66%" />
-              <line x1="85%" y1="27%" x2="86%" y2="76%" />
+              <line x1="13%" y1="20%" x2="37.5%" y2="14%" />
+              <line x1="37.5%" y1="14%" x2="62%" y2="19%" />
+              <line x1="62%" y1="19%" x2="87%" y2="25%" />
+              <line x1="13%" y1="68%" x2="38%" y2="76%" />
+              <line x1="38%" y1="76%" x2="63%" y2="72%" />
+              <line x1="63%" y1="72%" x2="87%" y2="78%" />
+              <line x1="13%" y1="20%" x2="13%" y2="68%" />
+              <line x1="87%" y1="25%" x2="87%" y2="78%" />
             </g>
           </motion.svg>
 
