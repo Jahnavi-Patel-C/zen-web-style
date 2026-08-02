@@ -8,6 +8,7 @@ interface ChapterShellProps {
   heading: string;
   pageRef?: string;
   children: ReactNode;
+  wide?: ReactNode;
 }
 
 const fadeUp = {
@@ -15,7 +16,15 @@ const fadeUp = {
   show: { opacity: 1, y: 0 },
 };
 
-export function ChapterShell({ id, number, label, heading, pageRef, children }: ChapterShellProps) {
+export function ChapterShell({
+  id,
+  number,
+  label,
+  heading,
+  pageRef,
+  children,
+  wide,
+}: ChapterShellProps) {
   return (
     <section
       id={id}
@@ -76,6 +85,8 @@ export function ChapterShell({ id, number, label, heading, pageRef, children }: 
             <div className="max-w-[720px]">{children}</div>
           </div>
         </motion.div>
+
+        {wide ? <div className="mt-4">{wide}</div> : null}
       </div>
     </section>
   );
