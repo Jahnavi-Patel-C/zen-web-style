@@ -60,7 +60,6 @@ function DraftingBackdrop() {
 /* ---------------- step card ---------------- */
 
 interface StepProps {
-  index: number;
   number: string;
   title: string;
   meta: string;
@@ -405,9 +404,13 @@ function StepFindings() {
         initial={{ rotateX: -14, opacity: 0 }}
         animate={{ rotateX: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 60, damping: 20 }}
-        style={{ transformPerspective: 900, transformOrigin: "top" }}
         className="rounded-[10px] px-6 py-6"
-        style={{ background: "rgba(245,241,232,0.03)", border: `1px solid ${BORDER}` }}
+        style={{
+          transformPerspective: 900,
+          transformOrigin: "top",
+          background: "rgba(245,241,232,0.03)",
+          border: `1px solid ${BORDER}`,
+        }}
       >
         <ul className="space-y-3">
           {[
@@ -494,22 +497,22 @@ function InvestigationTrack() {
       />
 
       <div className="space-y-24">
-        <Step index={0} number="01" title="Website Selection" meta="Sample Frame">
+        <Step number="01" title="Website Selection" meta="Sample Frame">
           <StepSelection />
         </Step>
-        <Step index={1} number="02" title="Observation Framework" meta="Instrument">
+        <Step number="02" title="Observation Framework" meta="Instrument">
           <StepFramework />
         </Step>
-        <Step index={2} number="03" title="Evidence Collection" meta="Field Work">
+        <Step number="03" title="Evidence Collection" meta="Field Work">
           <StepEvidence />
         </Step>
-        <Step index={3} number="04" title="Pattern Coding" meta="Analysis">
+        <Step number="04" title="Pattern Coding" meta="Analysis">
           <StepCoding />
         </Step>
-        <Step index={4} number="05" title="Comparative Analysis" meta="Cross-Case">
+        <Step number="05" title="Comparative Analysis" meta="Cross-Case">
           <StepComparative />
         </Step>
-        <Step index={5} number="06" title="Research Findings" meta="Closure">
+        <Step number="06" title="Research Findings" meta="Closure">
           <StepFindings />
         </Step>
       </div>
