@@ -3,6 +3,7 @@ import { Hero } from "@/components/hero/Hero";
 import { ChapterNav, chapters } from "@/components/ChapterNav";
 import { Introduction } from "@/components/chapters/Introduction";
 import { LiteratureReview } from "@/components/chapters/LiteratureReview";
+import { Methodology } from "@/components/chapters/Methodology";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,7 +33,13 @@ function Index() {
       <Hero />
       <Introduction />
       <LiteratureReview />
-      {chapters.filter((c) => c.id !== "introduction" && c.id !== "literature-review").map((c) => (
+      <Methodology />
+      {chapters
+        .filter(
+          (c) =>
+            c.id !== "introduction" && c.id !== "literature-review" && c.id !== "methodology",
+        )
+        .map((c) => (
         <section
           key={c.id}
           id={c.id}
