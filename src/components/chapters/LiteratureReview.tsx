@@ -106,7 +106,7 @@ const sources: Source[] = [
   },
 ];
 
-const RADIUS = 380;
+const RADIUS = 430;
 const PERIOD = 45000;
 
 function OrbitCard({
@@ -126,7 +126,7 @@ function OrbitCard({
   index: number;
   onHover: (ref: string | null) => void;
 }) {
-  const r = RADIUS * (hovered ? 0.52 : 1) * (1 - collapse);
+  const r = RADIUS * (hovered ? 0.62 : 1) * (1 - collapse);
   const x = Math.cos(angle) * r * 1.02;
   const y = Math.sin(angle) * r * 0.80;
 
@@ -264,7 +264,7 @@ export function LiteratureReview() {
         {/* orbit stage — desktop */}
         <div
           ref={stageRef}
-          className="relative mt-24 hidden h-[900px] w-full items-center justify-center xl:flex"
+          className="relative mt-24 hidden h-[1020px] w-full items-center justify-center xl:flex"
         >
           {/* orbit ellipse guide */}
           <motion.div
@@ -288,8 +288,8 @@ export function LiteratureReview() {
                 transition={{ duration: 0.45, ease: EASE }}
                 x1="50%"
                 y1="50%"
-                x2={`calc(50% + ${Math.cos(positions[hoveredIndex]!) * RADIUS * 0.52 * 1.02}px)`}
-                y2={`calc(50% + ${Math.sin(positions[hoveredIndex]!) * RADIUS * 0.52 * 0.80}px)`}
+                x2={`calc(50% + ${Math.cos(positions[hoveredIndex]!) * RADIUS * 0.62 * 1.02}px)`}
+                y2={`calc(50% + ${Math.sin(positions[hoveredIndex]!) * RADIUS * 0.62 * 0.80}px)`}
                 stroke="rgba(184,147,103,0.5)"
                 strokeWidth={1}
                 strokeDasharray="3 4"
