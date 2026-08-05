@@ -127,17 +127,17 @@ function OrbitCard({
   onHover: (ref: string | null) => void;
 }) {
   const r = RADIUS * (hovered ? 0.52 : 1) * (1 - collapse);
-  const x = Math.cos(angle) * r * 1.18;
-  const y = Math.sin(angle) * r * 0.72;
+  const x = Math.cos(angle) * r * 1.02;
+  const y = Math.sin(angle) * r * 0.80;
 
   return (
     <motion.div
-      className="absolute top-1/2 left-1/2 w-[268px]"
+      className="absolute top-1/2 left-1/2 w-[240px]"
       initial={{ opacity: 0, x: source.from.x, y: source.from.y, scale: 0.9 }}
       whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
       viewport={{ once: true, margin: "-15% 0px" }}
       transition={{ type: "spring", stiffness: 42, damping: 18, delay: 0.5 + index * 0.12 }}
-      style={{ marginLeft: -134 }}
+      style={{ marginLeft: -120 }}
     >
       <motion.div
         animate={{
@@ -270,7 +270,7 @@ export function LiteratureReview() {
           <motion.div
             aria-hidden
             className="pointer-events-none absolute top-1/2 left-1/2 rounded-[50%] border border-[rgba(245,241,232,0.06)]"
-            style={{ width: RADIUS * 2 * 1.18, height: RADIUS * 2 * 0.72, x: "-50%", y: "-50%" }}
+            style={{ width: RADIUS * 2 * 1.02, height: RADIUS * 2 * 0.80, x: "-50%", y: "-50%" }}
             animate={{ opacity: 1 - collapse, scale: 1 - collapse * 0.6 }}
             transition={{ duration: 0.4, ease: EASE }}
           />
@@ -288,8 +288,8 @@ export function LiteratureReview() {
                 transition={{ duration: 0.45, ease: EASE }}
                 x1="50%"
                 y1="50%"
-                x2={`calc(50% + ${Math.cos(positions[hoveredIndex]!) * RADIUS * 0.52 * 1.18}px)`}
-                y2={`calc(50% + ${Math.sin(positions[hoveredIndex]!) * RADIUS * 0.52 * 0.72}px)`}
+                x2={`calc(50% + ${Math.cos(positions[hoveredIndex]!) * RADIUS * 0.52 * 1.02}px)`}
+                y2={`calc(50% + ${Math.sin(positions[hoveredIndex]!) * RADIUS * 0.52 * 0.80}px)`}
                 stroke="rgba(184,147,103,0.5)"
                 strokeWidth={1}
                 strokeDasharray="3 4"
