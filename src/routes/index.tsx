@@ -4,6 +4,7 @@ import { ChapterNav, chapters } from "@/components/ChapterNav";
 import { Introduction } from "@/components/chapters/Introduction";
 import { LiteratureReview } from "@/components/chapters/LiteratureReview";
 import { Methodology } from "@/components/chapters/Methodology";
+import { ComparativeAnalysis } from "@/components/chapters/ComparativeAnalysis";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -34,10 +35,14 @@ function Index() {
       <Introduction />
       <LiteratureReview />
       <Methodology />
+      <ComparativeAnalysis />
       {chapters
         .filter(
           (c) =>
-            c.id !== "introduction" && c.id !== "literature-review" && c.id !== "methodology",
+            c.id !== "introduction" &&
+            c.id !== "literature-review" &&
+            c.id !== "methodology" &&
+            c.id !== "comparative-analysis",
         )
         .map((c) => (
         <section
