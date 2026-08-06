@@ -51,6 +51,7 @@ function BlueprintBackdrop() {
 /* ---------------- morph primitives ---------------- */
 
 type MV = MotionValue<number>;
+type Dim = string | number | MotionValue<number> | MotionValue<string>;
 
 function Bar({
   w,
@@ -58,8 +59,8 @@ function Bar({
   strong,
   style,
 }: {
-  w: string | number | MV;
-  h: string | number | MV;
+  w: Dim;
+  h: Dim;
   strong?: boolean;
   style?: Record<string, unknown>;
 }) {
