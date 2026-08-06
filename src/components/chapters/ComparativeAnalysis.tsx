@@ -232,8 +232,8 @@ function MorphInterface({ t }: { t: MV }) {
                   borderRadius: radius,
                   padding: useMotionTemplate`${useTransform(t, [0, 1], [14, 7])}px`,
                   gap: useMotionTemplate`${rowGap}px`,
-                  opacity: i > 5 ? denseOpacity : 1,
-                  display: useTransform(t, (v) => (i > 5 && v < 0.05 ? "none" : "flex")),
+                  opacity: i > 2 ? denseOpacity : 1,
+                  display: useTransform(t, (v) => (i > 2 && v < 0.05 ? "none" : "flex")),
                   background: "rgba(245,241,232,0.02)",
                 }}
               >
