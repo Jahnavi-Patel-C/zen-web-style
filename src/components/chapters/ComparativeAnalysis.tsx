@@ -87,8 +87,8 @@ function MorphInterface({ t }: { t: MV }) {
   const heroTitleH = useTransform(t, [0, 1], [26, 13]);
   const heroTitleW = useTransform(t, [0, 1], ["62%", "44%"]);
   const heroSubH = useTransform(t, [0, 1], [9, 6]);
-  const heroPadY = useTransform(t, [0, 1], [40, 14]);
-  const imgH = useTransform(t, [0, 1], [104, 58]);
+  const heroPadY = useTransform(t, [0, 1], [30, 14]);
+  const imgH = useTransform(t, [0, 1], [78, 58]);
   const btnW = useTransform(t, [0, 1], [104, 62]);
   const btnH = useTransform(t, [0, 1], [30, 20]);
   const radius = useTransform(t, [0, 1], [10, 3]);
