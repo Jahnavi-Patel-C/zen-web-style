@@ -141,7 +141,7 @@ function Swatch({ h, r, label }: { h: MotionValue<number>; r: MotionValue<number
 
 const NAV_A = ["Home", "Shop", "Offers", "Support"];
 const NAV_B = ["ホーム", "商品一覧", "キャンペーン", "サポート"];
-const NAV_EXTRA = ["会員登録", "お知らせ", "採用情報", "店舗検索", "よくある質問"];
+const NAV_EXTRA = ["会員登録", "お知らせ", "採用情報", "店舗検索"];
 const UTIL = ["個人のお客さま", "法人のお客さま", "IR情報", "English", "文字サイズ 小 中 大", "サイトマップ"];
 
 const CARDS = [
@@ -218,13 +218,13 @@ function MorphInterface({ t }: { t: MV }) {
         style={{ borderColor: BORDER, paddingLeft: padPx, paddingRight: padPx, paddingTop: navPadY, paddingBottom: navPadY }}
       >
         <MorphText t={t} a="MERIDIAN" b="株式会社メリディアン" size={[15, 11]} weight={500} tracking={[0.2, 0.08]} color="rgba(245,241,232,0.9)" serif />
-        <motion.div className="flex items-center" style={{ gap: navGap }}>
+        <motion.div className="flex shrink-0 items-center" style={{ gap: navGap }}>
           {NAV_A.map((label, i) => (
             <MorphText key={label} t={t} a={label} b={NAV_B[i]} size={[12, 9.5]} color="rgba(245,241,232,0.66)" />
           ))}
-          <DenseOnly t={t} className="items-center gap-3">
+          <DenseOnly t={t} className="shrink-0 items-center gap-3">
             {NAV_EXTRA.map((l) => (
-              <span key={l} className="font-synonym text-[9.5px] text-[rgba(245,241,232,0.6)]">
+              <span key={l} className="shrink-0 whitespace-nowrap font-synonym text-[9.5px] text-[rgba(245,241,232,0.6)]">
                 {l}
               </span>
             ))}
@@ -234,6 +234,7 @@ function MorphInterface({ t }: { t: MV }) {
             style={{
               borderColor: BORDER,
               borderRadius: radius,
+              flexShrink: 0,
               height: btnH,
               paddingLeft: btnPxPad,
               paddingRight: btnPxPad,
