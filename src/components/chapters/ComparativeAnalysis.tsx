@@ -169,7 +169,7 @@ const RANK = ["ランキング", "特集記事", "会員特典", "店舗情報",
 function MorphInterface({ t }: { t: MV }) {
   const pad = useTransform(t, [0, 1], [30, 12]);
   const gap = useTransform(t, [0, 1], [24, 8]);
-  const navGap = useTransform(t, [0, 1], [28, 12]);
+  const navGap = useTransform(t, [0, 1], [28, 9]);
   const heroPadY = useTransform(t, [0, 1], [40, 16]);
   const imgH = useTransform(t, [0, 1], [92, 52]);
   const btnH = useTransform(t, [0, 1], [34, 22]);
@@ -240,7 +240,7 @@ function MorphInterface({ t }: { t: MV }) {
               paddingRight: btnPxPad,
             }}
           >
-            <MorphText t={t} a="Sign in" b="ログイン / 会員登録" size={[11, 8.5]} color="rgba(245,241,232,0.72)" />
+            <MorphText t={t} a="Sign in" b="ログイン" size={[11, 8.5]} color="rgba(245,241,232,0.72)" />
           </motion.div>
         </motion.div>
       </motion.div>
@@ -556,11 +556,11 @@ function AnnotationPanel({ japanese }: { japanese: boolean }) {
 /* ---------------- callout markers over the browser ---------------- */
 
 const CALLOUTS = [
-  { n: "01", top: "6%", left: "3%" },
-  { n: "02", top: "26%", left: "3%" },
-  { n: "03", top: "52%", left: "3%" },
-  { n: "04", top: "74%", left: "3%" },
-  { n: "05", top: "90%", left: "3%" },
+  { n: "01", top: "6%", left: "1.2%" },
+  { n: "02", top: "26%", left: "1.2%" },
+  { n: "03", top: "52%", left: "1.2%" },
+  { n: "04", top: "74%", left: "1.2%" },
+  { n: "05", top: "90%", left: "1.2%" },
 ];
 
 function Callouts({ active }: { active: boolean }) {
