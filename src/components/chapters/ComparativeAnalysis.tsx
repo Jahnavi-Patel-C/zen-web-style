@@ -79,12 +79,14 @@ function MorphText({
   const oB = useTransform(t, [0, 0.42, 0.58, 1], [0, 0, 1, 1]);
   return (
     <motion.span
-      className={`relative inline-block whitespace-nowrap leading-[1.25] ${serif ? "font-boska" : "font-synonym"} ${className}`}
+      className={`relative inline-grid whitespace-nowrap leading-[1.25] ${serif ? "font-boska" : "font-synonym"} ${className}`}
       style={{ fontSize: fs, letterSpacing: ls, fontWeight: weight, color }}
     >
-      <motion.span style={{ opacity: b ? oA : 1 }}>{a}</motion.span>
+      <motion.span className="col-start-1 row-start-1" style={{ opacity: b ? oA : 1 }}>
+        {a}
+      </motion.span>
       {b ? (
-        <motion.span className="absolute inset-0" style={{ opacity: oB }}>
+        <motion.span className="col-start-1 row-start-1" style={{ opacity: oB }}>
           {b}
         </motion.span>
       ) : null}
@@ -367,7 +369,13 @@ function MorphInterface({ t }: { t: MV }) {
           {RANK.map((title, i) => (
             <div key={title} className="flex flex-col gap-[3px] border-b pb-2" style={{ borderColor: LINE }}>
               <span className="font-synonym text-[9px] text-[rgba(245,241,232,0.78)]">{title}</span>
-              {["最新の更新情報を掲載しています", "会員限定の特典を確認する", "詳しい条件はこちら"].slice(0, 3 - (i % 2)).map((l, j) => (
+              {[
+                ["週間ランキングを見る", "季節の人気商品", "レビュー数の多い順"],
+                ["編集部が選ぶ特集", "季刊レポート 2026", "取材記事アーカイブ"],
+                ["ポイント還元の条件", "会員ランク制度", "誕生日クーポン"],
+                ["最寄り店舗を検索", "営業時間・定休日", "駐車場のご案内"],
+                ["電話・チャット窓口", "返品・交換について", "よくあるご質問"],
+              ][i].slice(0, 3 - (i % 2)).map((l, j) => (
                 <span key={j} className="truncate font-synonym text-[7.5px] text-[rgba(245,241,232,0.45)]">
                   ・{l}
                 </span>
@@ -384,12 +392,12 @@ function MorphInterface({ t }: { t: MV }) {
       >
         <motion.div className="grid" style={{ gap: cardGapPx, gridTemplateColumns: footCols }}>
           {[
-            { a: "Company", b: "会社概要", links: ["会社案内", "IR情報", "採用情報"] },
-            { a: "Support", b: "サポート", links: ["よくある質問", "お問い合わせ", "配送について"] },
-            { a: "Legal", b: "規約・方針", links: ["利用規約", "プライバシー", "特定商取引法"] },
-            { a: "Services", b: "サービス", links: ["法人向け", "定期便", "ギフト"] },
-            { a: "Stores", b: "店舗案内", links: ["店舗検索", "営業時間", "アクセス"] },
-            { a: "Follow", b: "公式アカウント", links: ["ニュースレター", "アプリ", "サイトマップ"] },
+            { a: "Company", b: "会社概要", en: "About us", links: ["会社案内", "IR情報", "採用情報"] },
+            { a: "Support", b: "サポート", en: "Help centre", links: ["よくある質問", "お問い合わせ", "配送について"] },
+            { a: "Legal", b: "規約・方針", en: "Terms & privacy", links: ["利用規約", "プライバシー", "特定商取引法"] },
+            { a: "Services", b: "サービス", en: "For business", links: ["法人向け", "定期便", "ギフト"] },
+            { a: "Stores", b: "店舗案内", en: "Find a store", links: ["店舗検索", "営業時間", "アクセス"] },
+            { a: "Follow", b: "公式アカウント", en: "Newsletter", links: ["ニュースレター", "アプリ", "サイトマップ"] },
           ].map((col, i) => (
             <FooterCol key={col.a} t={t} col={col} index={i} />
           ))}
@@ -454,7 +462,7 @@ function FooterCol({
   index,
 }: {
   t: MV;
-  col: { a: string; b: string; links: string[] };
+  col: { a: string; b: string; en: string; links: string[] };
   index: number;
 }) {
   const extra = index > 2;
@@ -474,7 +482,7 @@ function FooterCol({
         className="font-synonym text-[9px] text-[rgba(245,241,232,0.4)]"
         style={{ opacity: useTransform(t, [0, 0.4, 1], [1, 0, 0]) }}
       >
-        {col.links[0]}
+        {col.en}
       </motion.span>
     </motion.div>
   );
@@ -505,9 +513,9 @@ function AnnotationPanel({ japanese }: { japanese: boolean }) {
   const mode = japanese ? MODES.japan : MODES.india;
   return (
     <div className="relative rounded-[12px] p-6" style={{ border: `1px solid ${ANNO}`, background: "rgba(245,241,232,0.02)" }}>
-      <div className="flex items-baseline justify-between">
+      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <div className="text-[9px] tracking-[0.4em] uppercase text-[rgba(245,241,232,0.45)]">Annotation</div>
-        <div className="font-synonym text-[9px] text-[rgba(245,241,232,0.35)]">{mode.site}</div>
+        <div className="font-synonym text-[9px] tracking-[0.08em] text-[rgba(245,241,232,0.35)]">{mode.site}</div>
       </div>
       <AnimatePresence mode="wait">
         <motion.div
