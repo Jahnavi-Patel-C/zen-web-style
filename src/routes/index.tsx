@@ -5,6 +5,7 @@ import { Introduction } from "@/components/chapters/Introduction";
 import { LiteratureReview } from "@/components/chapters/LiteratureReview";
 import { Methodology } from "@/components/chapters/Methodology";
 import { ComparativeAnalysis } from "@/components/chapters/ComparativeAnalysis";
+import { Findings } from "@/components/chapters/Findings";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,13 +37,15 @@ function Index() {
       <LiteratureReview />
       <Methodology />
       <ComparativeAnalysis />
+      <Findings />
       {chapters
         .filter(
           (c) =>
             c.id !== "introduction" &&
             c.id !== "literature-review" &&
             c.id !== "methodology" &&
-            c.id !== "comparative-analysis",
+            c.id !== "comparative-analysis" &&
+            c.id !== "findings",
         )
         .map((c) => (
         <section
