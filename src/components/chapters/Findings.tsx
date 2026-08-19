@@ -254,7 +254,7 @@ function PatternLines() {
               ))}
               <text
                 x={40}
-                y={AY - 14}
+                y={34}
                 fill="rgba(245,241,232,0.34)"
                 fontSize="9"
                 letterSpacing="3"
