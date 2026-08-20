@@ -374,10 +374,10 @@ export function Findings() {
   return (
     <ChapterShell
       id="findings"
-      number="04"
+      number="05"
       label="Analysis"
       heading="Pattern Coding"
-      pageRef="§ 04 · Findings"
+      pageRef="§ 05 · Pages 073 – 088"
       wide={
         <>
           <PatternLines />
