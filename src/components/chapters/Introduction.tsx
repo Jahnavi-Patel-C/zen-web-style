@@ -7,6 +7,21 @@ import {
 } from "./ChapterShell";
 import { ReconstructingInterface } from "./ReconstructingInterface";
 import { ArchiveTimeline } from "./ArchiveTimeline";
+import sunsetRoomAsset from "@/assets/japanese-sunset-room.png.asset.json";
+
+function IntroductionBackdrop() {
+  return (
+    <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-[115vh] overflow-hidden">
+      <img
+        src={sunsetRoomAsset.url}
+        alt=""
+        className="h-full w-full object-cover opacity-30 [animation:introduction-image-reveal_1.4s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none"
+      />
+      <div className="absolute inset-0 bg-[rgba(21,23,27,0.62)]" />
+      <div className="absolute inset-x-0 bottom-0 h-1/3 bg-[#15171B] opacity-90" />
+    </div>
+  );
+}
 
 export function Introduction() {
   return (
@@ -16,8 +31,10 @@ export function Introduction() {
       label="Introduction"
       heading="Why This Research?"
       pageRef="§ 01 · Pages 012 – 019"
+      backdrop={<IntroductionBackdrop />}
       wide={
         <>
+          <ReconstructingInterface />
           <ArchiveTimeline />
           <div className="mx-auto mt-24 max-w-[1180px]">
             <ChapterRule />
@@ -38,10 +55,6 @@ export function Introduction() {
       </ChapterLead>
 
       <ChapterMarker label="Opening Note" />
-
-      <ReconstructingInterface />
-
-      <ChapterMarker label="Collected Documents · 01 – 04" />
     </ChapterShell>
   );
 }
