@@ -26,6 +26,7 @@ export function Hero() {
           ["--hero-secondary" as string]: "rgba(245,241,232,0.65)",
           ["--hero-muted" as string]: "rgba(245,241,232,0.4)",
           ["--hero-accent" as string]: "#A98E7A",
+          ["--hero-veil" as string]: "rgba(15,16,18,0.46)",
         } as CSSProperties
       }
     >
