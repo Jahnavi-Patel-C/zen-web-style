@@ -7,17 +7,17 @@ import { useRef, type ReactNode } from "react";
  */
 
 const STEPS = [
-  { at: 0.06, label: "Observation 01", text: "Navigation exposes many destinations simultaneously." },
-  { at: 0.26, label: "Observation 02", text: "Multiple scales coexist without losing hierarchy." },
-  { at: 0.46, label: "Observation 03", text: "Information accumulates instead of being hidden." },
-  { at: 0.66, label: "Observation 04", text: "Hierarchy is created through grouping rather than empty space." },
+  { label: "Observation 01", text: "Navigation exposes many destinations simultaneously." },
+  { label: "Observation 02", text: "Multiple scales coexist without losing hierarchy." },
+  { label: "Observation 03", text: "Information accumulates instead of being hidden." },
+  { label: "Observation 04", text: "Hierarchy is created through grouping rather than empty space." },
 ];
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 function useStep(progress: MotionValue<number>, at: number, disabled: boolean) {
-  const opacity = useTransform(progress, [at, at + 0.12], disabled ? [1, 1] : [0, 1]);
-  const y = useTransform(progress, [at, at + 0.12], disabled ? [0, 0] : [14, 0]);
+  const opacity = useTransform(progress, [at, at + 0.22], disabled ? [1, 1] : [0.18, 1]);
+  const y = useTransform(progress, [at, at + 0.22], disabled ? [0, 0] : [10, 0]);
   return { opacity, y };
 }
 
@@ -30,30 +30,24 @@ export function ReconstructingInterface() {
   });
 
   const frame = useStep(scrollYProgress, 0.0, reduced);
-  const nav = useStep(scrollYProgress, 0.08, reduced);
-  const type = useStep(scrollYProgress, 0.28, reduced);
-  const blocks = useStep(scrollYProgress, 0.48, reduced);
-  const modules = useStep(scrollYProgress, 0.68, reduced);
-
-  // Browser recedes once reconstruction completes.
-  const browserOpacity = useTransform(scrollYProgress, [0.9, 1], reduced ? [1, 1] : [1, 0.35]);
+  const nav = useStep(scrollYProgress, 0.05, reduced);
+  const type = useStep(scrollYProgress, 0.14, reduced);
+  const blocks = useStep(scrollYProgress, 0.25, reduced);
+  const modules = useStep(scrollYProgress, 0.34, reduced);
 
   return (
-    <div ref={ref} className="relative mt-16 h-[420vh]">
+    <div ref={ref} className="relative mx-auto mt-24 h-[260vh] max-w-[1180px]">
       <div className="sticky top-0 flex h-screen items-center">
-        <motion.div
-          style={{ opacity: browserOpacity }}
-          className="w-full lg:w-[min(1020px,68vw)]"
-        >
+        <div className="w-full">
           <div className="mb-6 text-[10px] tracking-[0.35em] uppercase text-[rgba(245,241,232,0.4)]">
             Reconstructing the Interface
           </div>
 
-          <div className="grid grid-cols-12 gap-6">
+          <div className="grid grid-cols-12 gap-8 lg:gap-12">
             {/* Wireframe */}
             <motion.div
               style={{ opacity: frame.opacity, y: frame.y }}
-              className="col-span-12 lg:col-span-8"
+              className="col-span-12 lg:col-span-9"
             >
               <div className="border border-[rgba(245,241,232,0.14)]">
                 {/* Chrome */}
@@ -148,14 +142,11 @@ export function ReconstructingInterface() {
             </motion.div>
 
             {/* Annotation rail */}
-            <div className="col-span-12 lg:col-span-4">
-              <div className="space-y-8">
+            <div className="col-span-12 lg:col-span-3">
+              <div className="grid grid-cols-2 gap-x-5 gap-y-8 lg:block lg:space-y-8">
                 {STEPS.map((s) => (
                   <Annotation
                     key={s.label}
-                    progress={scrollYProgress}
-                    at={s.at}
-                    reduced={reduced}
                     label={s.label}
                   >
                     {s.text}
@@ -164,38 +155,28 @@ export function ReconstructingInterface() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
 }
 
 function Annotation({
-  progress,
-  at,
-  reduced,
   label,
   children,
 }: {
-  progress: MotionValue<number>;
-  at: number;
-  reduced: boolean;
   label: string;
   children: ReactNode;
 }) {
-  const opacity = useTransform(progress, [at, at + 0.12], reduced ? [1, 1] : [0, 1]);
-  const y = useTransform(progress, [at, at + 0.12], reduced ? [0, 0] : [12, 0]);
-  const lineWidth = useTransform(progress, [at, at + 0.14], reduced ? ["48px", "48px"] : ["0px", "48px"]);
-
   return (
-    <motion.div style={{ opacity, y }} transition={{ ease: EASE }} className="font-synonym">
-      <motion.div style={{ width: lineWidth }} className="mb-3 h-px bg-[rgba(169,142,122,0.6)]" />
+    <div className="font-synonym">
+      <div className="mb-3 h-px w-12 bg-[rgba(169,142,122,0.6)]" />
       <div className="text-[10px] tracking-[0.35em] uppercase text-[rgba(245,241,232,0.5)]">
         {label}
       </div>
       <p className="mt-2 max-w-[280px] text-[14px] leading-[1.7] text-[rgba(245,241,232,0.72)]">
         {children}
       </p>
-    </motion.div>
+    </div>
   );
 }

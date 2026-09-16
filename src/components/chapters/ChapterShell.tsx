@@ -9,6 +9,7 @@ interface ChapterShellProps {
   pageRef?: string;
   children: ReactNode;
   wide?: ReactNode;
+  backdrop?: ReactNode;
 }
 
 const fadeUp = {
@@ -24,13 +25,15 @@ export function ChapterShell({
   pageRef,
   children,
   wide,
+  backdrop,
 }: ChapterShellProps) {
   return (
     <section
       id={id}
       className="relative border-t border-[rgba(245,241,232,0.08)] px-6 py-32 sm:px-10 lg:px-16 lg:pr-[16rem]"
     >
-      <div className="mx-auto max-w-[1600px] font-synonym">
+      {backdrop}
+      <div className="relative z-10 mx-auto max-w-[1600px] font-synonym">
         {/* Top editorial masthead */}
         <motion.div
           initial="hidden"
