@@ -152,7 +152,7 @@
     transform: scale(1.025);
   }
   to {
-    opacity: 0.3;
+    opacity: 1;
     transform: scale(1);
   }
 }
