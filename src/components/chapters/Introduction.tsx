@@ -11,12 +11,15 @@ import sunsetRoomAsset from "@/assets/japanese-sunset-room.png.asset.json";
 
 function IntroductionBackdrop() {
   return (
-    <div
-      aria-hidden
-      className="pointer-events-none absolute inset-0 bg-top bg-repeat-y [animation:introduction-image-reveal_1.4s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none"
-      style={{ backgroundImage: `url(${sunsetRoomAsset.url})`, backgroundSize: "100% auto" }}
-    >
-      <div className="absolute inset-0 bg-[rgba(18,20,23,0.18)]" />
+    <div aria-hidden className="pointer-events-none absolute inset-0">
+      <div className="sticky top-0 h-screen overflow-hidden">
+        <img
+          src={sunsetRoomAsset.url}
+          alt=""
+          className="h-full w-full object-cover [animation:introduction-image-reveal_1.4s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none"
+        />
+        <div className="absolute inset-0 bg-[rgba(18,20,23,0.18)]" />
+      </div>
     </div>
   );
 }
