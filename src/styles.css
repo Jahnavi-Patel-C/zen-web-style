@@ -149,11 +149,9 @@
 @keyframes introduction-image-reveal {
   from {
     opacity: 0;
-    background-size: 103% auto;
   }
   to {
     opacity: 1;
-    background-size: 100% auto;
   }
 }
 
