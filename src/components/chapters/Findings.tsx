@@ -349,7 +349,7 @@ function PatternRegister() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-12% 0px" }}
             transition={{ duration: 0.7, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-            className="bg-[#15171B] p-8"
+            className="editorial-glass border p-8"
           >
             <div className="flex items-baseline gap-4">
               <span className="font-boska text-lg text-[#A98E7A]">{p.n}</span>

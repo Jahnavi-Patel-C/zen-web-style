@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from "motion/react";
 import type { CSSProperties } from "react";
-import roomAsset from "@/assets/japanese-room-mount-fuji.png.asset.json";
+import roomAsset from "@/assets/landing-japanese-room.png.asset.json";
 import { ScrollIndicator } from "./ScrollIndicator";
 
 const fadeUp = {
@@ -26,7 +26,7 @@ export function Hero() {
           ["--hero-secondary" as string]: "rgba(245,241,232,0.65)",
           ["--hero-muted" as string]: "rgba(245,241,232,0.4)",
           ["--hero-accent" as string]: "#A98E7A",
-          ["--hero-veil" as string]: "rgba(15,16,18,0.46)",
+          ["--hero-veil" as string]: "rgba(15,16,18,0.12)",
         } as CSSProperties
       }
     >
@@ -63,7 +63,7 @@ export function Hero() {
             initial="hidden"
             animate="show"
             custom={1}
-            className="font-boska font-medium leading-[0.9]"
+            className="landing-text-contrast font-boska font-medium leading-[0.9]"
             style={{ fontSize: "clamp(64px, 10vw, 150px)" }}
           >
             <span className="block">Japanese</span>
@@ -74,7 +74,7 @@ export function Hero() {
             initial="hidden"
             animate="show"
             custom={2}
-            className="mt-8 max-w-md font-melodrama italic text-[color:var(--hero-secondary)]"
+            className="landing-text-contrast mt-8 max-w-md font-melodrama italic text-[color:var(--hero-secondary)]"
             style={{ fontSize: "clamp(18px, 1.6vw, 24px)" }}
           >
             A comparative study through research, data and observation.
