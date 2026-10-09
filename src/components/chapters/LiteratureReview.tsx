@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { motion, useAnimationFrame, useScroll, useTransform, useInView } from "motion/react";
+import evidenceVerandaAsset from "@/assets/evidence-veranda.png.asset.json";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -149,7 +150,7 @@ function OrbitCard({
         transition={{ type: "spring", stiffness: 60, damping: 20, mass: 0.7 }}
         onHoverStart={() => onHover(source.ref)}
         onHoverEnd={() => onHover(null)}
-        className="rounded-[14px] border border-[rgba(245,241,232,0.08)] bg-[#17191D] p-5"
+        className="editorial-glass rounded-[14px] border p-5"
         style={{ zIndex: hovered ? 40 : 20 }}
       >
         <div className="flex items-baseline justify-between">
@@ -261,6 +262,14 @@ export function LiteratureReview() {
           </div>
         </motion.div>
 
+        <figure className="mt-20 aspect-[16/8] w-full overflow-hidden border border-[rgba(245,241,232,0.12)]">
+          <img
+            src={evidenceVerandaAsset.url}
+            alt="A Japanese veranda opening onto a sunset view, with cherry blossoms and archival papers."
+            className="h-full w-full object-cover object-center"
+          />
+        </figure>
+
         {/* orbit stage — desktop */}
         <div
           ref={stageRef}
@@ -303,7 +312,7 @@ export function LiteratureReview() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-15% 0px" }}
             transition={{ type: "spring", stiffness: 50, damping: 18 }}
-            className="absolute top-1/2 left-1/2 z-30 flex h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-[rgba(245,241,232,0.22)] bg-[#131519] px-10 text-center"
+            className="editorial-glass absolute top-1/2 left-1/2 z-30 flex h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border px-10 text-center"
             style={{ boxShadow: "0 0 80px 12px rgba(184,147,103,0.07) inset, 0 0 60px rgba(0,0,0,0.5)" }}
           >
             <motion.div
@@ -337,7 +346,7 @@ export function LiteratureReview() {
 
         {/* compact stacked fallback */}
         <div className="mt-20 grid gap-6 sm:grid-cols-2 xl:hidden">
-          <div className="rounded-[14px] border border-[rgba(245,241,232,0.14)] bg-[#131519] p-8 sm:col-span-2">
+          <div className="editorial-glass rounded-[14px] border p-8 sm:col-span-2">
             <div className="font-synonym text-[9px] tracking-[0.4em] uppercase text-[#B89367]">
               Research Question
             </div>
@@ -348,7 +357,7 @@ export function LiteratureReview() {
           {sources.map((s) => (
             <div
               key={s.ref}
-              className="rounded-[14px] border border-[rgba(245,241,232,0.08)] bg-[#17191D] p-5"
+              className="editorial-glass rounded-[14px] border p-5"
             >
               <div className="flex items-baseline justify-between">
                 <span className="font-synonym text-[9px] tracking-[0.35em] uppercase text-[#B89367]">

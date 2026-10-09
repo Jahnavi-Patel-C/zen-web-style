@@ -93,10 +93,8 @@ function Step({ number, title, meta, children }: StepProps) {
         initial={{ opacity: 0, y: 26, scale: 0.985 }}
         animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
         transition={{ type: "spring", stiffness: 60, damping: 20, delay: 0.18 }}
-        className="rounded-[14px] p-7 sm:p-9"
+        className="editorial-glass rounded-[14px] border p-7 sm:p-9"
         style={{
-          background: "#1B1D22",
-          border: `1px solid ${BORDER}`,
           boxShadow: "0 18px 48px -28px rgba(0,0,0,0.9)",
         }}
       >
@@ -287,8 +285,7 @@ function StepEvidence() {
             initial={{ opacity: 0, x: -18, y: -6 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
             transition={{ type: "spring", stiffness: 70, damping: 20, delay: 0.15 + i * 0.18 }}
-            className="mb-3 rounded-[10px] px-4 py-3 font-synonym text-[14px] text-[rgba(245,241,232,0.8)]"
-            style={{ background: "rgba(245,241,232,0.03)", border: `1px solid ${BORDER}` }}
+            className="editorial-glass mb-3 rounded-[10px] border px-4 py-3 font-synonym text-[14px] text-[rgba(245,241,232,0.8)]"
           >
             {it}
           </motion.div>
@@ -325,8 +322,7 @@ function StepCoding() {
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: EASE, delay: 0.1 + i * 0.15 }}
-            className="rounded-full px-4 py-2 font-synonym text-[13px] text-[rgba(245,241,232,0.8)]"
-            style={{ background: "rgba(245,241,232,0.03)", border: `1px solid ${BORDER}` }}
+            className="editorial-glass rounded-full border px-4 py-2 font-synonym text-[13px] text-[rgba(245,241,232,0.8)]"
           >
             {t}
           </motion.span>
@@ -365,8 +361,7 @@ function StepComparative() {
             initial={{ opacity: 0, x: i === 0 ? -60 : 60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ type: "spring", stiffness: 55, damping: 20, delay: 0.15 }}
-            className="w-40 rounded-[10px] px-5 py-6 text-center"
-            style={{ background: "rgba(245,241,232,0.03)", border: `1px solid ${BORDER}` }}
+            className="editorial-glass w-40 rounded-[10px] border px-5 py-6 text-center"
           >
             <div className="font-boska text-xl text-[#F5F1E8]">{c}</div>
             <div className={`mt-2 ${labelClass}`}>18 files</div>
@@ -404,12 +399,10 @@ function StepFindings() {
         initial={{ rotateX: -14, opacity: 0 }}
         animate={{ rotateX: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 60, damping: 20 }}
-        className="rounded-[10px] px-6 py-6"
+        className="editorial-glass rounded-[10px] border px-6 py-6"
         style={{
           transformPerspective: 900,
           transformOrigin: "top",
-          background: "rgba(245,241,232,0.03)",
-          border: `1px solid ${BORDER}`,
         }}
       >
         <ul className="space-y-3">

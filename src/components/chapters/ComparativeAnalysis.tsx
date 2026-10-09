@@ -513,7 +513,7 @@ const MODES = {
 function AnnotationPanel({ japanese }: { japanese: boolean }) {
   const mode = japanese ? MODES.japan : MODES.india;
   return (
-    <div className="relative rounded-[12px] p-6" style={{ border: `1px solid ${ANNO}`, background: "rgba(245,241,232,0.02)" }}>
+    <div className="editorial-glass relative rounded-[12px] border p-6">
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <div className="text-[9px] tracking-[0.4em] uppercase text-[rgba(245,241,232,0.45)]">Annotation</div>
         <div className="font-synonym text-[9px] tracking-[0.08em] text-[rgba(245,241,232,0.35)]">{mode.site}</div>

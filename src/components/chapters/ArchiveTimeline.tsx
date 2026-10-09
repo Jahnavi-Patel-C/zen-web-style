@@ -131,7 +131,7 @@ function Folder({
         animate={{ y: 0 }}
         whileHover={{ y: -4 }}
         transition={{ duration: 0.45, ease: EASE }}
-        className="border border-[rgba(245,241,232,0.08)] bg-[rgba(245,241,232,0.035)] px-7 py-7 transition-colors duration-300 group-hover:border-[rgba(245,241,232,0.18)] group-hover:bg-[rgba(245,241,232,0.055)]"
+        className="editorial-glass border px-7 py-7 transition-colors duration-300 group-hover:bg-[rgba(245,241,232,0.08)]"
       >
         <div className="flex flex-wrap items-baseline gap-x-5 gap-y-2">
           {doc.meta.map((m) => (

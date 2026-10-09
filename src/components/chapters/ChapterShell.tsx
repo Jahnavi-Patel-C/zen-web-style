@@ -134,7 +134,7 @@ export function ChapterRule() {
 
 export function ChapterAnnotation({ children }: { children: ReactNode }) {
   return (
-    <aside className="mt-10 border-l border-[rgba(169,142,122,0.5)] pl-5 font-synonym text-[13px] leading-[1.7] tracking-[0.01em] text-[rgba(245,241,232,0.55)]">
+    <aside className="editorial-glass mt-10 border-l border-[rgba(169,142,122,0.5)] py-4 pr-4 pl-5 font-synonym text-[13px] leading-[1.7] tracking-[0.01em] text-[rgba(245,241,232,0.55)]">
       {children}
     </aside>
   );
