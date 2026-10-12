@@ -1,3 +1,3 @@
-- [ ] Use the first uploaded photo on the landing page while keeping its title readable.
-- [ ] Add the second uploaded photo to the “Collecting the Evidence” section.
-- [ ] Apply subtle glass styling to text panels outside the landing page, then verify the page.
+- [x] Use the first uploaded photo on the landing page while keeping its title readable.
+- [x] Add the second uploaded photo to the “Collecting the Evidence” section.
+- [x] Apply subtle glass styling to text panels outside the landing page, then verify the page.
